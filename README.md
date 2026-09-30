@@ -2,6 +2,8 @@
 
 Uma aplicação completa para a Clínica Veterinária do Areeiro, criada para demonstrar aos formandos da UC00603 como SQL dá origem a uma aplicação real: pesquisa, fichas relacionadas, formulários, histórico, autenticação e permissões.
 
+Demonstração pública: **[clinicavet.jfazevedo.pt](https://clinicavet.jfazevedo.pt)**. As credenciais dos quatro perfis estão abaixo.
+
 Stack: **Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, componentes oficiais shadcn/ui, MySQL e Zod**. A interface está em português de Portugal e adapta-se a telemóvel e computador. Não depende de fontes, imagens ou serviços externos para funcionar.
 
 ## Iniciar
@@ -51,6 +53,8 @@ Pode usar outra porta com `npm run dev -- --port 3100` ou `npm start -- --port 3
 ## Credenciais de demonstração
 
 A palavra-passe inicial de **todas** as contas abaixo é **`Formacao2026!`**.
+
+No ecrã de login, os botões **Administração**, **Receção**, **Veterinário**, **Cliente 1** e **Cliente 2** entram diretamente nestas contas. O formulário de email e palavra-passe continua disponível para outras contas criadas pela administração.
 
 | Email                      | Perfil        | Área inicial | Associação à base                |
 | -------------------------- | ------------- | ------------ | -------------------------------- |

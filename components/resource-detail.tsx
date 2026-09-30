@@ -52,6 +52,11 @@ export async function ResourceDetail({
       ].includes(k),
   );
   const known = fields[resource].map((f) => f.key);
+  const detailLabels: Record<string, string> = {
+    ...labels,
+    email: 'Email de contacto',
+    ...Object.fromEntries(fields[resource].map((f) => [f.key, f.label])),
+  };
   detailFields.sort(([a], [b]) => known.indexOf(a) - known.indexOf(b));
   const relResource = resource === 'dono' ? 'animal' : 'consulta';
   const relHref =
@@ -103,7 +108,7 @@ export async function ResourceDetail({
                   className={['notas', 'observacoes'].includes(key) ? 'sm:col-span-2' : ''}
                 >
                   <dt className="mb-2 text-xs text-muted">
-                    {labels[key] || key.replaceAll('_', ' ')}
+                    {detailLabels[key] || key.replaceAll('_', ' ')}
                   </dt>
                   <dd className="whitespace-pre-wrap break-words text-sm leading-6">
                     {value(key, v)}

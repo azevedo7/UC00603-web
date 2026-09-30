@@ -55,7 +55,7 @@ export default async function Login() {
           <div className="eyebrow mb-4">Bem-vindo à ClínicaVet</div>
           <h2 className="text-3xl font-semibold tracking-tight">É bom ter-lhe por cá.</h2>
           <p className="mb-8 mt-3 text-sm leading-6 text-muted">
-            Inicie sessão para acompanhar os seus animais ou entrar no espaço de trabalho.
+            Escolha um perfil de demonstração ou inicie sessão com email e palavra-passe.
           </p>
           <LoginForm />
           <div className="mt-10 flex items-center gap-2 border-t border-line pt-6 text-xs text-muted">

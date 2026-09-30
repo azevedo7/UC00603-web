@@ -178,7 +178,7 @@ export function PortalShell({ children, user }: { children: React.ReactNode; use
           <Brand portal />
           <nav
             aria-label="Área do cliente"
-            className="order-3 flex w-full gap-5 overflow-x-auto md:order-none md:w-auto"
+            className="order-3 grid w-full grid-cols-2 gap-x-5 gap-y-3 md:order-none md:flex md:w-auto md:gap-5"
           >
             {[
               ['/portal', 'O meu espaço'],
