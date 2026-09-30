@@ -1,19 +1,15 @@
 import 'server-only';
 import { NextRequest, NextResponse } from 'next/server';
 import { AppError, friendlyError } from './errors';
+import { validOrigin } from './origin';
 export function checkOrigin(req: NextRequest) {
-  const origin = req.headers.get('origin');
-  // Next normaliza endereços de loopback em nextUrl; compara com o Host recebido.
-  let parsed: URL;
-  try {
-    parsed = new URL(origin || '');
-  } catch {
-    throw new AppError('Origem do pedido inválida.', 403);
-  }
   if (
-    !['localhost', '127.0.0.1', '[::1]'].includes(parsed.hostname) ||
-    parsed.host !== req.headers.get('host') ||
-    parsed.protocol !== req.nextUrl.protocol
+    !validOrigin(
+      req.headers.get('origin'),
+      req.headers.get('host'),
+      req.nextUrl.protocol,
+      process.env.APP_URL,
+    )
   )
     throw new AppError('Origem do pedido inválida.', 403);
   if (!req.headers.get('content-type')?.includes('application/json'))

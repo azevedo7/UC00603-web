@@ -60,7 +60,7 @@ A palavra-passe inicial de **todas** as contas abaixo é **`Formacao2026!`**.
 | `cliente@clinicavet.test`  | Cliente       | `/portal`    | `dono.id_dono = 1`               |
 | `cliente2@clinicavet.test` | Cliente       | `/portal`    | `dono.id_dono = 3`               |
 
-Estas credenciais são intencionalmente públicas para a demonstração local e utilizam exclusivamente dados fictícios. Não reutilize estas contas num serviço público.
+Estas credenciais são intencionalmente públicas para as demonstrações com os formandos, incluindo a instalação em `clinicavet.jfazevedo.pt`, e utilizam exclusivamente dados fictícios. Os participantes partilham as mesmas contas e os registos de formação.
 
 Termine a sessão com **Sair** antes de testar outro perfil. Para mostrar perfis ao mesmo tempo, use perfis separados do navegador ou uma janela privada. Separadores da mesma sessão de navegador partilham o cookie de autenticação.
 
@@ -125,6 +125,19 @@ O esquema original não contém utilizadores ou sessões. Para o preservar, a au
 - As respostas não enviam salários a perfis não administrativos nem notas clínicas à receção.
 
 `.env`, `.env.local` e `.data` estão excluídos do Git. As contas e sessões são persistentes entre reinícios. Guarde a pasta `.data` juntamente com a configuração se pretender conservar os acessos da demonstração. Esta solução destina-se a um servidor local com um único processo e não a uma instalação distribuída.
+
+## Servir através de HTTPS
+
+Num servidor com um proxy inverso, configure a origem pública e o cookie seguro:
+
+```dotenv
+APP_URL=https://clinicavet.jfazevedo.pt
+COOKIE_SECURE=true
+```
+
+O proxy deve conservar o cabeçalho `Host`. A aplicação aceita escritas apenas com a origem pública configurada, mesmo quando o proxy comunica com o servidor Next.js por HTTP privado. Sem `APP_URL`, aceita apenas origens locais. Ligue o servidor à interface privada do contentor com `node node_modules/next/dist/bin/next start --hostname 0.0.0.0 --port 3000`; publique apenas o proxy HTTPS.
+
+Conserve `.data` num diretório persistente, com acesso exclusivo da conta de serviço, e a configuração fora do Git. A instalação pública usa uma cópia da base de formação; a base local permanece intacta.
 
 ## Roteiro para mostrar à turma
 
