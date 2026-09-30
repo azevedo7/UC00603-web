@@ -7,7 +7,7 @@ export default async function Login() {
   if (user) redirect(user.role === 'cliente' ? '/portal' : '/gestao');
   return (
     <main className="grid min-h-screen lg:grid-cols-2">
-      <section className="relative flex flex-col overflow-hidden bg-[#183e30] p-8 text-[#f2f4df] md:p-14">
+      <section className="relative order-2 flex flex-col overflow-hidden bg-[#183e30] p-8 text-[#f2f4df] md:p-14 lg:order-none">
         <div className="flex items-center gap-3">
           <PawPrint size={30} className="text-[#c7e0b5]" />
           <span className="text-2xl font-semibold">
@@ -50,7 +50,7 @@ export default async function Login() {
         </p>
         <div className="pointer-events-none absolute -right-36 -bottom-40 h-96 w-96 rounded-full border border-[#35583e]" />
       </section>
-      <section className="flex items-center justify-center bg-[#fcfaf5] px-7 py-14">
+      <section className="order-1 flex items-center justify-center bg-[#fcfaf5] px-7 py-14 lg:order-none">
         <div className="w-full max-w-sm">
           <div className="eyebrow mb-4">Bem-vindo à ClínicaVet</div>
           <h2 className="text-3xl font-semibold tracking-tight">É bom ter-lhe por cá.</h2>
