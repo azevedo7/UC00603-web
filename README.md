@@ -4,7 +4,7 @@ Uma aplicação completa para a Clínica Veterinária do Areeiro, criada para de
 
 Demonstração pública: **[clinicavet.jfazevedo.pt](https://clinicavet.jfazevedo.pt)**. As credenciais dos quatro perfis estão abaixo.
 
-Stack: **Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, componentes oficiais shadcn/ui, MySQL e Zod**. A interface está em português de Portugal e adapta-se a telemóvel e computador. Não depende de fontes, imagens ou serviços externos para funcionar.
+Stack: **Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, componentes oficiais shadcn/ui, Motion para React, MySQL e Zod**. A interface está em português de Portugal e adapta-se a telemóvel e computador. Não depende de fontes, imagens ou serviços externos para funcionar.
 
 ## Iniciar
 
@@ -87,6 +87,7 @@ O email de contacto em `dono.email` é independente do email usado para autentic
 
 ## Ecrãs
 
+- **Página inicial:** landing page pública com ilustrações de um cão e um gato. A entrada animada termina em cerca de três segundos; o botão “Rever a entrada” permite repeti-la. Respeita movimento reduzido e mantém o conteúdo e os links disponíveis sem JavaScript. Os acessos levam ao login ou ao espaço do utilizador já autenticado.
 - **Clientes:** pesquisa por nome, NIF ou email; formulário com os campos do esquema; ficha com os animais associados.
 - **Animais:** pesquisa por nome, tutor ou microchip; raça associada à espécie por `raca`; ficha com o tutor e histórico de consultas.
 - **Veterinários:** pesquisa por nome, cédula ou especialidade; criação e edição com supervisor e estado ativo; ficha com consultas. A aplicação impede supervisão de si próprio e ciclos na hierarquia.
